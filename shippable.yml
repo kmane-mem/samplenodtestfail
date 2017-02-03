@@ -5,9 +5,9 @@ node_js:
   - 0.12
   #- 5.0
   #- 0.11
-#branches:
- # only:
- #   - test
+branches:
+  only:
+    - test
  # except:
  #   - master
     
