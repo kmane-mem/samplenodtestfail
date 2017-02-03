@@ -25,7 +25,7 @@ node_js:
 build:
   pre_ci:
   #  - docker build -t=quay.io/revathird/cock1_nod_multipush56 .
-    - docker build -t=shippabledocker/sample_node:latest .
+    - docker build -t=shippabledocker/sample_node .
 
   pre_ci_boot:
     image_name: drydock/u14nodall
@@ -40,7 +40,7 @@ build:
     
 
   post_ci:
-    - docker push shippabledocker/sample_node:latest
+    - docker push shippabledocker/sample_node
     #- docker build -t=shippabledocker/cock1_nod_multipush56:multi123 .    
     #- docker push shippabledocker/cock1_nod_multipush56:multi123
   #  - docker build -t=shippabledocker/cock1_nod_multipush56push .    
