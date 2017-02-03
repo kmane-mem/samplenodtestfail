@@ -1,0 +1,22 @@
+jobs:
+ # - name: rc-man1
+ #   type: manifest
+ #   steps:
+    #  - IN: rc-img1
+    #  - IN: rc-tg1
+
+  - name: ci-man2
+    type: manifest
+    steps:
+      - IN: ci-img1et
+  
+  - name: ci-man1
+    type: manifest
+    steps:
+      - IN: rc-img1
+      
+  - name: ddcdeploy
+    type: deploy
+    steps:
+      - IN: rc-man1
+      - IN: rc-ddccluster
