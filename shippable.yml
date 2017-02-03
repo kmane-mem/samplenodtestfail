@@ -39,8 +39,8 @@ build:
   #  - cs ps
     
 
-  post_ci:
-    - docker push shippabledocker/sample_node
+  #post_ci:
+  #  - docker push shippabledocker/sample_node
     #- docker build -t=shippabledocker/cock1_nod_multipush56:multi123 .    
     #- docker push shippabledocker/cock1_nod_multipush56:multi123
   #  - docker build -t=shippabledocker/cock1_nod_multipush56push .    
