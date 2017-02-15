@@ -23,16 +23,9 @@ node_js:
   #  - COMMITER=VARSHA
   
 build:
-  pre_ci:
+ # pre_ci:
   #  - docker build -t=quay.io/revathird/cock1_nod_multipush56 .
-    - docker build -t=shippabledocker/sample-ship-plv2Nod .
-    - docker build -t=shippabledocker/sample-ship-plv2Php .
-    - docker build -t=shippabledocker/sample-ship-plv2Jav .
-    - docker build -t=shippabledocker/sample-ship-plv2Pyt .
-    - docker build -t=shippabledocker/sample-ship-nod .
-    - docker build -t=shippabledocker/sample-ship-php .
-    - docker build -t=shippabledocker/sample-ship-jav .
-    - docker build -t=shippabledocker/sample-ship-pyt .
+    
     
   pre_ci_boot:
     image_name: drydock/u14nodall
@@ -48,14 +41,29 @@ build:
     
 
   post_ci:
-    - docker push shippabledocker/sample-ship-plv2Nod
-    - docker push shippabledocker/sample-ship-plv2Php
-    - docker push shippabledocker/sample-ship-plv2Jav
-    - docker push shippabledocker/sample-ship-plv2Pyt
-    - docker push shippabledocker/sample-ship-nod
-    - docker push shippabledocker/sample-ship-php
-    - docker push shippabledocker/sample-ship-jav
-    - docker push shippabledocker/sample-ship-pyt
+    - docker build -t=shippabledocker/sample-ship-plv2Nod:tip .
+    - docker push shippabledocker/sample-ship-plv2Nod:tip
+    
+    - docker build -t=shippabledocker/sample-ship-plv2Php:tip .
+    - docker push shippabledocker/sample-ship-plv2Php:tip
+    
+    - docker build -t=shippabledocker/sample-ship-plv2Jav:tip .
+    - docker push shippabledocker/sample-ship-plv2Jav:tip
+    
+    - docker build -t=shippabledocker/sample-ship-plv2Pyt:tip .
+    - docker push shippabledocker/sample-ship-plv2Pyt:tip
+    
+    - docker build -t=shippabledocker/sample-ship-nod:tip .
+    - docker push shippabledocker/sample-ship-nod:tip
+    
+    - docker build -t=shippabledocker/sample-ship-php:tip .
+    - docker push shippabledocker/sample-ship-php:tip
+    
+    - docker build -t=shippabledocker/sample-ship-jav:tip .
+    - docker push shippabledocker/sample-ship-jav:tip
+    
+    - docker build -t=shippabledocker/sample-ship-pyt:tip . 
+    - docker push shippabledocker/sample-ship-pyt:tip
     #- docker push shippabledocker/sample_node:$BRANCH.$BUILD_NUMBER
     #- docker build -t=shippabledocker/cock1_nod_multipush56:multi123 .    
     #- docker push shippabledocker/cock1_nod_multipush56:multi123
