@@ -41,9 +41,22 @@ build:
     
 
   post_ci:
-    - docker build -t=shippabledocker/ship_plv2node:tip .
-    - docker push shippabledocker/ship_plv2node:tip
-
+    - docker build -t=shippabledocker/ship_plv2nod:tip .
+    - docker push shippabledocker/ship_plv2nod:tip
+    - docker build -t=shippabledocker/ship_plv2php:tip .
+    - docker push shippabledocker/ship_plv2php:tip
+    - docker build -t=shippabledocker/ship_plv2jav:tip .
+    - docker push shippabledocker/ship_plv2jav:tip
+    - docker build -t=shippabledocker/ship_plv2pyt:tip .
+    - docker push shippabledocker/ship_plv2pyt:tip
+    - docker build -t=shippabledocker/plv2nod:tip .
+    - docker push shippabledocker/plv2nod:tip
+    - docker build -t=shippabledocker/plv2php:tip .
+    - docker push shippabledocker/plv2php:tip
+    - docker build -t=shippabledocker/plv2jav:tip .
+    - docker push shippabledocker/plv2jav:tip
+    - docker build -t=shippabledocker/plv2pyt:tip .
+    - docker push shippabledocker/plv2pyt:tip
     #- docker push shippabledocker/sample_node:$BRANCH.$BUILD_NUMBER
     #- docker build -t=shippabledocker/cock1_nod_multipush56:multi123 .    
     #- docker push shippabledocker/cock1_nod_multipush56:multi123
