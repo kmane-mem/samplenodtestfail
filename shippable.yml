@@ -25,14 +25,14 @@ node_js:
 build:
   pre_ci:
   #  - docker build -t=quay.io/revathird/cock1_nod_multipush56 .
-    - docker build -t=shippabledocker/sample_ship_plv2Nod .
-    - docker build -t=shippabledocker/sample_ship_plv2Php .
-    - docker build -t=shippabledocker/sample_ship_plv2Jav .
-    - docker build -t=shippabledocker/sample_ship_plv2Pyt .
-    - docker build -t=shippabledocker/sample_ship_nod .
-    - docker build -t=shippabledocker/sample_ship_php .
-    - docker build -t=shippabledocker/sample_ship_jav .
-    - docker build -t=shippabledocker/sample_ship_pyt .
+    - docker build -t=shippabledocker/sample-ship-plv2Nod .
+    - docker build -t=shippabledocker/sample-ship-plv2Php .
+    - docker build -t=shippabledocker/sample-ship-plv2Jav .
+    - docker build -t=shippabledocker/sample-ship-plv2Pyt .
+    - docker build -t=shippabledocker/sample-ship-nod .
+    - docker build -t=shippabledocker/sample-ship-php .
+    - docker build -t=shippabledocker/sample-ship-jav .
+    - docker build -t=shippabledocker/sample-ship-pyt .
     
   pre_ci_boot:
     image_name: drydock/u14nodall
@@ -48,14 +48,14 @@ build:
     
 
   post_ci:
-    - docker push shippabledocker/sample_ship_plv2Nod
-    - docker push shippabledocker/sample_ship_plv2Php
-    - docker push shippabledocker/sample_ship_plv2Jav
-    - docker push shippabledocker/sample_ship_plv2Pyt
-    - docker push shippabledocker/sample_ship_nod
-    - docker push shippabledocker/sample_ship_php
-    - docker push shippabledocker/sample_ship_jav
-    - docker push shippabledocker/sample_ship_pyt
+    - docker push shippabledocker/sample-ship-plv2Nod
+    - docker push shippabledocker/sample-ship-plv2Php
+    - docker push shippabledocker/sample-ship-plv2Jav
+    - docker push shippabledocker/sample-ship-plv2Pyt
+    - docker push shippabledocker/sample-ship-nod
+    - docker push shippabledocker/sample-ship-php
+    - docker push shippabledocker/sample-ship-jav
+    - docker push shippabledocker/sample-ship-pyt
     #- docker push shippabledocker/sample_node:$BRANCH.$BUILD_NUMBER
     #- docker build -t=shippabledocker/cock1_nod_multipush56:multi123 .    
     #- docker push shippabledocker/cock1_nod_multipush56:multi123
