@@ -41,8 +41,8 @@ build:
     
 
   post_ci:
-    - docker build -t=shippabledocker/ship_plv2Nod:tip .
-    - docker push shippabledocker/ship_plv2Nod:tip
+    - docker build -t=shippabledocker/ship_plv2node:tip .
+    - docker push shippabledocker/ship_plv2node:tip
 
     #- docker push shippabledocker/sample_node:$BRANCH.$BUILD_NUMBER
     #- docker build -t=shippabledocker/cock1_nod_multipush56:multi123 .    
