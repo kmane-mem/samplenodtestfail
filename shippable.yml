@@ -25,8 +25,15 @@ node_js:
 build:
   pre_ci:
   #  - docker build -t=quay.io/revathird/cock1_nod_multipush56 .
-    - docker build -t=shippabledocker/sample_node:$BRANCH.$BUILD_NUMBER .
-
+    - docker build -t=shippabledocker/sample_ship_plv2Nod:tip .
+    - docker build -t=shippabledocker/sample_ship_plv2Php:tip .
+    - docker build -t=shippabledocker/sample_ship_plv2Jav:tip .
+    - docker build -t=shippabledocker/sample_ship_plv2Pyt:tip .
+    - docker build -t=shippabledocker/sample_ship_nod:tip .
+    - docker build -t=shippabledocker/sample_ship_php:tip .
+    - docker build -t=shippabledocker/sample_ship_jav:tip .
+    - docker build -t=shippabledocker/sample_ship_pyt:tip .
+    
   pre_ci_boot:
     image_name: drydock/u14nodall
     image_tag: prod
@@ -41,7 +48,15 @@ build:
     
 
   post_ci:
-    - docker push shippabledocker/sample_node:$BRANCH.$BUILD_NUMBER
+    - docker push shippabledocker/sample_ship_plv2Nod:tip 
+    - docker push shippabledocker/sample_ship_plv2Php:tip 
+    - docker push shippabledocker/sample_ship_plv2Jav:tip 
+    - docker push shippabledocker/sample_ship_plv2Pyt:tip 
+    - docker push shippabledocker/sample_ship_nod:tip 
+    - docker push shippabledocker/sample_ship_php:tip
+    - docker push shippabledocker/sample_ship_jav:tip 
+    - docker push shippabledocker/sample_ship_pyt:tip 
+    #- docker push shippabledocker/sample_node:$BRANCH.$BUILD_NUMBER
     #- docker build -t=shippabledocker/cock1_nod_multipush56:multi123 .    
     #- docker push shippabledocker/cock1_nod_multipush56:multi123
   #  - docker build -t=shippabledocker/cock1_nod_multipush56push .    
