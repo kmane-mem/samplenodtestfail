@@ -36,7 +36,7 @@ build:
   ci:
     - ps -eax
     - ls -al 
-    - cs ps
+    #- cs ps
     
 
   #post_ci:
@@ -47,10 +47,10 @@ build:
   #  - docker build -t=shippabledocker/cock1_nod_multipush56push .    
    # - docker push shippabledocker/cock1_nod_multipush56push
 
-integrations:
-  hub:
-    - integrationName: docker
-      type: docker    
+#integrations:
+#  hub:
+ #   - integrationName: docker
+  #    type: docker    
      # branches:
        # only:
         #  - master  
