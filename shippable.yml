@@ -35,9 +35,8 @@ build:
 
   ci:
     - ps -eax
-    - ls -al
-  
-  #  - cs ps
+    - ls -al 
+    - cs ps
     
 
   #post_ci:
