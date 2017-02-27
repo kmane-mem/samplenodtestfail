@@ -1,8 +1,8 @@
-language: node_js
+language: ruby
 
 # Version number
 node_js:
-  - 0.12
+  - 2.4
  # - 5.0
   #- 0.11
   
@@ -34,8 +34,9 @@ build:
   #  options: '--privileged=false --net=bridge -e FOO=true -e BOO=false'
 
   ci:
-    - ps -eax
-    - ls -al 
+    - echo "hello world"
+   # - ps -eax
+   # - ls -al 
     #- cs ps
     
 
