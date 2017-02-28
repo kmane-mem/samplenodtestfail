@@ -1,12 +1,12 @@
-language: ruby
+language: node_js
 
 # Version number
 node_js:
-  - 2.4
+  - 0.12
  # - 5.0
   #- 0.11
   
-services:
+#services:
   #- mysql
  # - postgres
   #- redis
@@ -14,7 +14,7 @@ services:
   #- elasticsearch
  # - mongodb
  # - rabbitmq
-  - cassandra
+  #- cassandra
  # - selenium
  
 #env: 
@@ -27,10 +27,10 @@ build:
   #  - docker build -t=quay.io/revathird/cock1_nod_multipush56 .
     
     
-  #pre_ci_boot:
-  #  image_name: drydock/u14nodall
-  #  image_tag: prod
- #   pull: false
+  pre_ci_boot:
+    image_name: drydock/u14nodall
+    image_tag: prod
+    pull: false
   #  options: '--privileged=false --net=bridge -e FOO=true -e BOO=false'
 
   ci:
