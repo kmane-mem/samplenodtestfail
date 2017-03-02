@@ -35,6 +35,7 @@ build:
 
   ci:
     - echo "hello world"
+    - sleep 3m
    # - ps -eax
    # - ls -al 
     #- cs ps
