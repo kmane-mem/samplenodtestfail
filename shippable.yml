@@ -3,10 +3,10 @@ language: node_js
 # Version number
 node_js:
   - 0.12
-  - 5.0
-  - 0.11
+  #- 5.0
+  #- 0.11
   
-services:
+#services:
   #- mysql
  # - postgres
   #- redis
@@ -14,7 +14,7 @@ services:
   #- elasticsearch
  # - mongodb
  # - rabbitmq
-  - cassandra
+  #- cassandra
  # - selenium
  
 #env: 
