@@ -29,13 +29,13 @@ build:
     
   pre_ci_boot:
     image_name: drydock/u14nodall
-    image_tag: master
+    image_tag: prod
    # pull: false
   #  options: '--privileged=false --net=bridge -e FOO=true -e BOO=false'
 
   ci:
     - echo "hello world"
-    - sleep 1m
+    #- sleep 1m
    # - ps -eax
    # - ls -al 
     #- cs ps
