@@ -3,7 +3,7 @@ language: node_js
 # Version number
 node_js:
   - 0.12
-  #- 5.0
+  - 5.0
   #- 0.11
   
 #services:
@@ -27,14 +27,18 @@ build:
   #  - docker build -t=quay.io/revathird/cock1_nod_multipush56 .
     
     
-  pre_ci_boot:
-    image_name: drydock/u14nodall
-    image_tag: prod
+  #pre_ci_boot:
+   # image_name: drydock/u14nodall
+   # image_tag: prod
    # pull: false
   #  options: '--privileged=false --net=bridge -e FOO=true -e BOO=false'
 
   ci:
     - echo "hello world"
+    - lsb_release -a
+    - docker --version
+    - docker info
+    - docker ps
     #- sleep 1m
    # - ps -eax
    # - ls -al 
