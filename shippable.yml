@@ -79,10 +79,7 @@ build:
       recipients: 
         - shiphitchcock1@gmail.com
        # - varsha@shippable.com
-      on_start: always
-      on_success: always
-      on_failure: always
-      on_pull_request: never
+
       
   #  - integrationName: slack
    #   type: slack
@@ -98,9 +95,6 @@ build:
       type: irc
       recipients:
         - "chat.freenode.net#test1"
-      on_start: always
-      on_success: always
-      on_failure: always
-      on_pull_request: always  
+ 
       
  
