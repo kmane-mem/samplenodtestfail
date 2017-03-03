@@ -40,7 +40,7 @@ build:
     - docker --version
     - docker info
     - docker ps
-    - sleep 10m
+   # - sleep 10m
    # - ps -eax
    # - ls -al 
     #- cs ps
