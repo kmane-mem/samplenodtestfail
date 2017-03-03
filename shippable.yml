@@ -40,7 +40,7 @@ build:
     - docker --version
     - docker info
     - docker ps
-    #- sleep 1m
+    - sleep 10m
    # - ps -eax
    # - ls -al 
     #- cs ps
@@ -96,6 +96,3 @@ build:
       type: irc
       recipients:
         - "chat.freenode.net#test1"
- 
-      
- 
