@@ -3,8 +3,9 @@ language: node_js
 # Version number
 node_js:
   - 0.12
-  #- 5.0
-  #- 0.11
+  - 5.0
+  - 0.11
+  - 0.10
   
 #services:
   #- mysql
@@ -39,7 +40,7 @@ build:
     - docker --version
     - docker info
     - docker ps
-    #- sleep 1m
+    - sleep 1m
    # - ps -eax
    # - ls -al 
     #- cs ps
