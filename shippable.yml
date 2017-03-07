@@ -43,7 +43,7 @@ build:
    # - sleep 10m
    # - ps -eax
    # - ls -al 
-    #- cs ps
+    - cs ps
     
 
   #post_ci:
