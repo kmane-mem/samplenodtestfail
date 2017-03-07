@@ -44,9 +44,20 @@ env:
   - BOO10=tenBar
   
 build:
+  
+ # pre_ci:
+  #  - docker build -t=quay.io/revathird/cock1_nod_multipush56 .
+    
+    
+ # pre_ci_boot:
+   # image_name: drydock/u14nodall
+   # image_tag: master
+   # pull: false
+  #  options: '--privileged=false --net=bridge -e FOO=true -e BOO=false'
+  
   ci:
-    - echo "Hello worl"
-    - MYVERSION=`date +%s`
+    - echo "Hello world"
+   # - MYVERSION=`date +%s`
     - echo $distribution
     - echo $tag
     - echo $test
@@ -60,20 +71,6 @@ build:
     - echo $BOO8
     - echo $BOO9
     - echo $BOO10
-  
-build:
- # pre_ci:
-  #  - docker build -t=quay.io/revathird/cock1_nod_multipush56 .
-    
-    
- # pre_ci_boot:
-   # image_name: drydock/u14nodall
-   # image_tag: master
-   # pull: false
-  #  options: '--privileged=false --net=bridge -e FOO=true -e BOO=false'
-
-  ci:
-    - echo "hello world"
     - lsb_release -a
     - docker --version
     - docker info
@@ -100,7 +97,7 @@ build:
        # only:
         #  - master  
        
-  notifications:
+  #notifications:
   
   #  - integrationName: proj-sampleNod
     #  type: webhook
@@ -113,10 +110,10 @@ build:
     #  on_success: never
      # on_failure: always
       
-    - integrationName: email
-      type: email
-      recipients: 
-        - shiphitchcock1@gmail.com
+   # - integrationName: email
+   #   type: email
+    #  recipients: 
+     #   - shiphitchcock1@gmail.com
        # - varsha@shippable.com
 
       
@@ -130,7 +127,7 @@ build:
    #   on_failure: always
    #   on_pull_request: never
       
-    - integrationName: irc
-      type: irc
-      recipients:
-        - "chat.freenode.net#test1"
+  #  - integrationName: irc
+     # type: irc
+     ## recipients:
+     #   - "chat.freenode.net#test1"
