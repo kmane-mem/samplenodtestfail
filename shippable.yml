@@ -2,10 +2,21 @@ language: node_js
 
 # Version number
 node_js:
+  - 0.10
+  - 5.0
+  - 4.2.3
+  - 4.2.4
+  - 4.2.5
+  - 0.11
+  - 5.2
+  - 4.3.3
+  - 4.4.4
+  - 4.5.5
   - 0.12
-  #- 5.0
-  #- 0.11
-  #- 0.10
+  - 5.6
+  - 4.5.3
+  - 4.5.4
+  - 4.6.5
   
 #services:
   #- mysql
@@ -18,10 +29,37 @@ node_js:
   #- cassandra
  # - selenium
  
-#env: 
-#  global:
-#    - FOO=BOO
-  #  - COMMITER=VARSHA
+env:
+  - BOO=Bar
+  - BOO2: newBar
+  - BOO3: thirdBar
+  - BOO4: forthBar
+  - BOO5: fifthBar
+  - BOO6: sixthBar
+  - BOO7: sevenBar
+  - distribution=centos tag=6.8
+  - distribution: ubuntu 
+    tag: 14.04
+  - BOO8=eightbar BOO9=ninthbar
+  - BOO10=tenBar
+  
+build:
+  ci:
+    - echo "Hello worl"
+    - MYVERSION=`date +%s`
+    - echo $distribution
+    - echo $tag
+    - echo $test
+    - echo $BOO
+    - echo $BOO2
+    - echo $BOO3
+    - echo $BOO4
+    - echo $BOO5
+    - echo $BOO6
+    - echo $BOO7
+    - echo $BOO8
+    - echo $BOO9
+    - echo $BOO10
   
 build:
  # pre_ci:
