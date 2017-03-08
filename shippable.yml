@@ -36,7 +36,8 @@ build:
 
   ci:
     - echo "hello world"
-    - pip install awsebcli
+    - sleep 2m
+   # - pip install awsebcli
 
 #post_ci:
 
@@ -53,14 +54,14 @@ integrations:
      # branches:
        # only:
         #  - master  
-  deploy:
-    - integrationName: "ship-aws"
-      type: aws
-      target: eb_paas
-      platform: "Node.js"
-      application_name: sample-node-eb-paas-app
-      env_name: sample-node-eb-paas-env
-      region: us-east-1   
+  #deploy:
+  #  - integrationName: "ship-aws"
+   #   type: aws
+   #   target: eb_paas
+   #   platform: "Node.js"
+   #   application_name: sample-node-eb-paas-app
+    #  env_name: sample-node-eb-paas-env
+    #  region: us-east-1   
       
   notifications:
   
