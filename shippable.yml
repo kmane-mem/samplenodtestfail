@@ -84,7 +84,7 @@ build:
       on_start: always
       on_success: always
       on_failure: always
-      on_pull_request: never
+      on_pull_request: always
       
   #  - integrationName: slack
    #   type: slack
@@ -104,5 +104,3 @@ build:
       on_success: always
       on_failure: always
       on_pull_request: always  
-      
- 
