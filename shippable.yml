@@ -94,5 +94,5 @@ build:
       
     - integrationName: irc
       type: irc
-      recipients:
+      recipients:   
         - "chat.freenode.net#test1"
