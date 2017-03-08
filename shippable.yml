@@ -36,17 +36,8 @@ build:
 
   ci:
     - echo "hello world"
-    - lsb_release -a
-    - docker --version
-    - docker info
-    - docker ps
-    - sleep 1m
-   # - ps -eax
-   # - ls -al 
 
-    
-
-  #post_ci:
+#post_ci:
 
     #- docker push shippabledocker/sample_node:$BRANCH.$BUILD_NUMBER
     #- docker build -t=shippabledocker/cock1_nod_multipush56:multi123 .    
@@ -54,14 +45,22 @@ build:
   #  - docker build -t=shippabledocker/cock1_nod_multipush56push .    
    # - docker push shippabledocker/cock1_nod_multipush56push
 
-#integrations:
+integrations:
 #  hub:
  #   - integrationName: docker
   #    type: docker    
      # branches:
        # only:
         #  - master  
-       
+  deploy:
+    - integrationName: "ship-aws"
+      type: aws
+      target: eb_paas
+      platform: "Node.js"
+      application_name: sample-node-eb-paas-app
+      env_name: sample-node-eb-paas-env
+      region: us-east-1   
+      
   notifications:
   
   #  - integrationName: proj-sampleNod
