@@ -38,7 +38,7 @@ build:
     - echo "hello world"
     #- sleep 2m
     #- pip install awsebcli
-    - cs ps
+    #- cs ps
 
 #post_ci:
 
