@@ -79,7 +79,7 @@ build:
       type: email
       recipients: 
         - shiphitchcock1@gmail.com
-       # - varsha@shippable.com
+        - varsha@shippable.com
 
       
   #  - integrationName: slack
