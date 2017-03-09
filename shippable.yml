@@ -1,100 +1,17 @@
 language: node_js
 
-# Version number
 node_js:
+  - 0.10.25
   - 0.12
-  #- 5.0
-  #- 0.11
-  #- 0.10
-  
-#services:
-  #- mysql
- # - postgres
-  #- redis
-  #- memcache
-  #- elasticsearch
- # - mongodb
- # - rabbitmq
-  #- cassandra
- # - selenium
- 
-#env: 
-#  global:
-#    - FOO=BOO
-  #  - COMMITER=VARSHA
-  
+
+env:
+  - XUNIT_FILE=shippable/testresults/result.xml
+
 build:
- # pre_ci:
-  #  - docker build -t=quay.io/revathird/cock1_nod_multipush56 .
-    
-    
- # pre_ci_boot:
-   # image_name: drydock/u14nodall
-   # image_tag: master
-   # pull: false
-  #  options: '--privileged=false --net=bridge -e FOO=true -e BOO=false'
-
   ci:
-    - echo "hello world"
-    #- sleep 2m
-    #- pip install awsebcli
-    #- cs ps
-
-#post_ci:
-
-    #- docker push shippabledocker/sample_node:$BRANCH.$BUILD_NUMBER
-    #- docker build -t=shippabledocker/cock1_nod_multipush56:multi123 .    
-    #- docker push shippabledocker/cock1_nod_multipush56:multi123
-  #  - docker build -t=shippabledocker/cock1_nod_multipush56push .    
-   # - docker push shippabledocker/cock1_nod_multipush56push
-
-integrations:
-#  hub:
- #   - integrationName: docker
-  #    type: docker    
-     # branches:
-       # only:
-        #  - master  
-  deploy:
-    - integrationName: "ship-aws"
-      type: aws
-      target: eb_paas
-      platform: "Node.js"
-      application_name: sample-node-eb-paas-app
-      env_name: sample-node-eb-paas-env
-      region: us-east-1   
-      
-  notifications:
-  
-  #  - integrationName: proj-sampleNod
-    #  type: webhook
-    #  payload:
-     #   - API_URL=$SHIPPABLE_API_URL
-     #   - CONTAINER_NAME=$SHIPPABLE_CONTAINER_NAME
-     #   - FOO=bar
-     #   - BOO=buzz
-    #  on_start: always
-    #  on_success: never
-     # on_failure: always
-      
-    - integrationName: email
-      type: email
-      recipients: 
-        - shiphitchcock1@gmail.com
-       # - varsha@shippable.com
-
-      
-  #  - integrationName: slack
-   #   type: slack
-   #   recipients:
-   #     - "#public-chnl"
-   #     - pvt-channel
-   #   on_start: always  
-   #   on_success: always
-   #   on_failure: always
-   #   on_pull_request: never
-      
-    - integrationName: irc
-      type: irc
-      recipients:
-        - "chat.freenode.net#test1"
+    - mkdir -p shippable/testresults
+    - mkdir -p shippable/codecoverage
+    - grunt
+    - ./node_modules/.bin/istanbul cover grunt -- -u tdd
+    - ./node_modules/.bin/istanbul report cobertura --dir  shippable/codecoverage/
+    
