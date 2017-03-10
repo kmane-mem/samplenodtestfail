@@ -2,20 +2,26 @@ language: node_js
 
 # Version number
 node_js:
+  - 0.10
   - 0.12
+  - 4.2.3
+  - iojs-v1
+  - iojs-v2
+  - iojs-v3
   - 5.0
-  #- 0.11
   
 #services:
-  #- mysql
+#  - mysql
  # - postgres
-  #- redis
-  #- memcache
+ # - redis
+ # - memcache
   #- elasticsearch
- # - mongodb
+  #- mongodb
  # - rabbitmq
-  #- cassandra
- # - selenium
+  #- neo4j
+  #- couchdb
+  #- rethinkdb
+
  
 #env: 
 #  global:
@@ -35,10 +41,10 @@ build:
 
   ci:
     - echo "hello world"
-    - lsb_release -a
-    - docker --version
-    - docker info
-    - docker ps
+    #- lsb_release -a
+    #- docker --version
+    #- docker info
+    #- docker ps
     #- sleep 1m
    # - ps -eax
    # - ls -al 
@@ -103,4 +109,3 @@ build:
       on_failure: always
       on_pull_request: always  
       
- 
