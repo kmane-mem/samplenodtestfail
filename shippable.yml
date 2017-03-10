@@ -33,10 +33,10 @@ build:
   #  - docker build -t=quay.io/revathird/cock1_nod_multipush56 .
     
     
-  #pre_ci_boot:
-   # image_name: drydock/u14nodall
-   # image_tag: prod
-   # pull: false
+  pre_ci_boot:
+    image_name: drydock/u14nod
+    image_tag: prod
+    pull: false
   #  options: '--privileged=false --net=bridge -e FOO=true -e BOO=false'
 
   ci:
