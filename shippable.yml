@@ -61,7 +61,7 @@ integrations:
       target: eb_paas
       platform: "Node.js"
       application_name: sample-node-eb-paas-app
-      env_name: sample-node-eb-paas-env
+      env_name: Sample-env
       region: us-east-1   
       
   notifications:
