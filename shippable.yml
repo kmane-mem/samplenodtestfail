@@ -60,9 +60,19 @@ integrations:
       type: aws
       target: eb_paas
       platform: "Node.js"
-      application_name: sample-node-eb-paas-app
+      application_name: "sample-node-eb-paas-app"
       env_name: Sample-env-1
-      region: us-east-1   
+      region: us-east-1  
+      
+    - integrationName: "ship-aws"
+      type: aws
+      target: eb_docker
+      application_name: "sample-node-eb-docker-app"
+      env_name: "Sample-env"
+      bucket_name: "elasticbeanstalk-us-east-1-742038439709"
+      region: "us-east-1"
+      image_name: "shippabledocker/pipelinev2"
+      image_tag: "$BRANCH.$BUILD_NUMBER"
       
   notifications:
   
