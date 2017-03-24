@@ -1,52 +1,27 @@
+# Language setting
 language: node_js
 
 # Version number
 node_js:
-  - 0.12
-  #- 5.0
-  #- 0.11
-  #- 0.10
-  
-#services:
-  #- mysql
- # - postgres
-  #- redis
-  #- memcache
-  #- elasticsearch
- # - mongodb
- # - rabbitmq
-  #- cassandra
- # - selenium
- 
-#env: 
-#  global:
-#    - FOO=BOO
-  #  - COMMITER=VARSHA
+  - 0.10
   
 build:
- # pre_ci:
-  #  - docker build -t=quay.io/revathird/cock1_nod_multipush56 .
+  pre_ci_boot:
+    image_name: trriplejay/simpleserver
+    image_tag: latest
     
-    
- # pre_ci_boot:
-   # image_name: drydock/u14nodall
-   # image_tag: master
-   # pull: false
-  #  options: '--privileged=false --net=bridge -e FOO=true -e BOO=false'
+  ci: 
+  # - source ~/.nvm/nvm.sh && nvm install 0.12
+    - node --version
+    - python --version
+    - npm install
+    - echo $SHIPPABLE_BUILD_DIR
+    - cat ulysses.txt
+    - echo "I made it!"
 
-  ci:
-    - echo "hello world"
-    #- sleep 2m
-    #- pip install awsebcli
-    #- cs ps
 
 #post_ci:
-
     #- docker push shippabledocker/sample_node:$BRANCH.$BUILD_NUMBER
-    #- docker build -t=shippabledocker/cock1_nod_multipush56:multi123 .    
-    #- docker push shippabledocker/cock1_nod_multipush56:multi123
-  #  - docker build -t=shippabledocker/cock1_nod_multipush56push .    
-   # - docker push shippabledocker/cock1_nod_multipush56push
 
 integrations:
 #  hub:
@@ -55,54 +30,13 @@ integrations:
      # branches:
        # only:
         #  - master  
-  deploy:
-    - integrationName: "ship-aws"
-      type: aws
-      target: eb_paas
-      platform: "Node.js"
-      application_name: "sample-node-eb-sample-app"
-      env_name: "Sample-env"
-      region: "us-east-1"  
-      
-    - integrationName: "ship-aws"
-      type: aws
-      target: eb_docker
-      application_name: "sample-node-eb-docker-app"
-      env_name: "Sample-env-1"
-      bucket_name: "elasticbeanstalk-us-east-1-742038439709"
-      region: "us-east-1"
-      image_name: "shippabledocker/pipelinev2"
-      image_tag: "$BRANCH.$BUILD_NUMBER"
-      
+        
   notifications:
   
-  #  - integrationName: proj-sampleNod
-    #  type: webhook
-    #  payload:
-     #   - API_URL=$SHIPPABLE_API_URL
-     #   - CONTAINER_NAME=$SHIPPABLE_CONTAINER_NAME
-     #   - FOO=bar
-     #   - BOO=buzz
-    #  on_start: always
-    #  on_success: never
-     # on_failure: always
-      
-    - integrationName: email
+   - integrationName: email
       type: email
       recipients: 
         - shiphitchcock1@gmail.com
-       # - varsha@shippable.com
-
-      
-  #  - integrationName: slack
-   #   type: slack
-   #   recipients:
-   #     - "#public-chnl"
-   #     - pvt-channel
-   #   on_start: always  
-   #   on_success: always
-   #   on_failure: always
-   #   on_pull_request: never
       
     - integrationName: irc
       type: irc
