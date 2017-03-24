@@ -33,7 +33,7 @@ integrations:
         
   notifications:
   
-   - integrationName: email
+    - integrationName: email
       type: email
       recipients: 
         - shiphitchcock1@gmail.com
