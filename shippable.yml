@@ -7,13 +7,13 @@ node_js:
   #- 0.11
   #- 0.10
   
-#services:
-  #- mysql
- # - postgres
-  #- redis
+services:
+  - mysql
+  - postgres
+  - redis
   #- memcache
   #- elasticsearch
- # - mongodb
+  - mongodb
  # - rabbitmq
   #- cassandra
  # - selenium
@@ -28,11 +28,11 @@ build:
   #  - docker build -t=quay.io/revathird/cock1_nod_multipush56 .
     
     
- # pre_ci_boot:
-   # image_name: drydock/u14nodall
-   # image_tag: master
-   # pull: false
-  #  options: '--privileged=false --net=bridge -e FOO=true -e BOO=false'
+  pre_ci_boot:
+    image_name: shippabledocker/cock1_nod_multipush56
+    image_tag: multi123
+    pull: false
+    options: '--privileged=false --net=bridge -e FOO=true -e BOO=false'
 
   ci:
     - echo "hello world"
@@ -55,24 +55,24 @@ integrations:
      # branches:
        # only:
         #  - master  
-  deploy:
-    - integrationName: "ship-aws"
-      type: aws
-      target: eb_paas
-      platform: "Node.js"
-      application_name: "sample-node-eb-sample-app"
-      env_name: "Sample-env"
-      region: "us-east-1"  
+ # deploy:
+  #  - integrationName: "ship-aws"
+  #    type: aws
+  #    target: eb_paas
+  #    platform: "Node.js"
+  #    application_name: "sample-node-eb-sample-app"
+  #    env_name: "Sample-env"
+  #    region: "us-east-1"  
       
-    - integrationName: "ship-aws"
-      type: aws
-      target: eb_docker
-      application_name: "sample-node-eb-docker-app"
-      env_name: "Sample-env-1"
-      bucket_name: "elasticbeanstalk-us-east-1-742038439709"
-      region: "us-east-1"
-      image_name: "shippabledocker/pipelinev2"
-      image_tag: "$BRANCH.$BUILD_NUMBER"
+   # - integrationName: "ship-aws"
+   #   type: aws
+   #   target: eb_docker
+    #  application_name: "sample-node-eb-docker-app"
+    #  env_name: "Sample-env-1"
+   #   bucket_name: "elasticbeanstalk-us-east-1-742038439709"
+    #  region: "us-east-1"
+   #   image_name: "shippabledocker/pipelinev2"
+   #   image_tag: "$BRANCH.$BUILD_NUMBER"
       
   notifications:
   
