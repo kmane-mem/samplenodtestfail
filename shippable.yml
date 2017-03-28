@@ -29,8 +29,8 @@ build:
     
     
   pre_ci_boot:
-    image_name: shippabledocker/cock1_nod_multipush56
-    image_tag: multi123
+    image_name: shippable/minv2
+    image_tag: latest
     pull: false
     options: '--privileged=false --net=bridge -e FOO=true -e BOO=false'
 
