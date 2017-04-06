@@ -16,7 +16,7 @@ build:
     - python --version
     - npm install
     - echo $SHIPPABLE_BUILD_DIR
-    #- cat ulysses.txt
+    - cat ulysses.txt
     - echo "I made it!"
     - sleep 2m
 
