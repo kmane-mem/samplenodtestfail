@@ -49,9 +49,9 @@ build:
    # - docker push shippabledocker/cock1_nod_multipush56push
 
 integrations:
-#  hub:
- #   - integrationName: docker
-  #    type: docker    
+  hub:
+    - integrationName: docker
+      type: docker    
      # branches:
        # only:
         #  - master  
