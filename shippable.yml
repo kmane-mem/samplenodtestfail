@@ -7,8 +7,8 @@ node_js:
   #- 0.11
   #- 0.10
   
-services:
-  - mysql
+#services:
+ # - mysql
  # - postgres
   #- redis
   #- memcache
@@ -36,7 +36,7 @@ build:
 
   ci:
     - echo "hello world"
-    - sleep 2m
+    - sleep 8m
     #- pip install awsebcli
     #- cs ps
 
