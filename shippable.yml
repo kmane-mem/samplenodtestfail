@@ -103,13 +103,7 @@ integrations:
       on_success: always
       on_failure: always
       on_pull_request: never
-    
-    - integrationName: notify-slack
-      type: slack
-      recipients:
-        - "#public-chnl"
-        - pvt-channel
-        
+          
     - integrationName: irc
       type: irc
       recipients:
