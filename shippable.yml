@@ -2,7 +2,7 @@ language: node_js
 
 # Version number
 node_js:
-  - 0.10
+  - 0.12
   #- 5.0
   #- 0.11
   #- 0.10
@@ -36,6 +36,7 @@ build:
 
   ci:
     - echo "hello world"
+    - echo "testing conflicts in PR"
    # - sleep 8m
     #- pip install awsebcli
     #- cs ps
