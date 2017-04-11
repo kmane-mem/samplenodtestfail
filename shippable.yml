@@ -33,7 +33,7 @@ build:
    # image_tag: multi123
   #  pull: false
    # options: '--privileged=false --net=bridge -e FOO=true -e BOO=false'
-
+  
   ci:
     - echo "hello world"
    # - sleep 8m
@@ -47,7 +47,8 @@ build:
     #- docker push shippabledocker/cock1_nod_multipush56:multi123
   #  - docker build -t=shippabledocker/cock1_nod_multipush56push .    
    # - docker push shippabledocker/cock1_nod_multipush56push
-
+  cache: true 
+  
 integrations:
   hub:
     - integrationName: docker
