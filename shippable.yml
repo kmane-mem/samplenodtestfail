@@ -25,8 +25,7 @@ node_js:
   
 build:
   pre_ci:
-    - docker build -t=shippabledocker/sample_node .
-    
+    - docker build -t=shippabledocker/sample_node .   
     
   #pre_ci_boot:
   #  image_name: shippabledocker/cock1_nod_multipush56
@@ -47,6 +46,8 @@ build:
     #- docker push shippabledocker/cock1_nod_multipush56:multi123
   #  - docker build -t=shippabledocker/cock1_nod_multipush56push .    
    # - docker push shippabledocker/cock1_nod_multipush56push
+   
+  cache: true
 
 integrations:
   hub:
