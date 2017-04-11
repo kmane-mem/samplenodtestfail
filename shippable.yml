@@ -7,9 +7,9 @@ node_js:
   #- 0.11
   #- 0.10
   
-#services:
- # - mysql
- # - postgres
+services:
+  - mysql
+  - postgres
   #- redis
   #- memcache
   #- elasticsearch
