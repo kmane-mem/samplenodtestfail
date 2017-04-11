@@ -25,8 +25,7 @@ node_js:
   
 build:
   pre_ci:
-    - docker build -t=shippabledocker/sample_node .
-    
+    - docker build -t=shippabledocker/sample_node .   
     
   #pre_ci_boot:
   #  image_name: shippabledocker/cock1_nod_multipush56
@@ -105,12 +104,7 @@ integrations:
       on_failure: always
       on_pull_request: never
     
-    - integrationName: notify-slack
-      type: slack
-      recipients:
-        - "#public-chnl"
-        - pvt-channel
-        
+    
     - integrationName: irc
       type: irc
       recipients:
