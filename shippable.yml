@@ -36,6 +36,7 @@ build:
 
   ci:
     - echo "hello world"
+    - echo "done"
    # - sleep 8m
     #- pip install awsebcli
     #- cs ps
