@@ -137,7 +137,7 @@ resources:
           - x1.*                          
         only:
           - v1.*                          
-      buildOnCommit: true              
+    #  buildOnCommit: true              
       buildOnPullRequest: true            
       buildOnRelease: true               
       buildOnTagPush: true                      
