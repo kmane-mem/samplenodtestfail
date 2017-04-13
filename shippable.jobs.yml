@@ -1,6 +1,5 @@
-jobs:
-      
-   - name: testprtagsrelease
+jobs:      
+   - name: testprtagsrelease123
      type: runSh
      steps:
        - IN: ar-samplescript2
