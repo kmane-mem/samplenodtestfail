@@ -10,16 +10,4 @@ jobs:
        - TASK:
          - script: ls
          - script: ./IN/ar-samplescript2/gitRepo/echo.sh
-     on_start:
-       - NOTIFY: ar-slack
-       - NOTIFY: ar-email
-     on_success:
-       - NOTIFY: ar-slack
-       - NOTIFY: ar-email
-       - script: echo 'infra test'
-       - script: echo 'newtesting success'
-     on_failure:
-       - script: echo 'testing1 failure'
-       - script: echo 'failure runSh'
-       - NOTIFY: ar-slack
-       - NOTIFY: ar-email
+  
