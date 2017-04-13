@@ -127,4 +127,20 @@ resources:
     integration: "github"
     pointer:
       sourceName: "shiptest-rc-me/sample-script-3"
-      branch: "master"
+      branch: master                        
+      branches:
+        except:
+          - test                              
+        only:
+          - script
+          - runsh
+      tags:
+        except:
+          - x1.*                          
+        only:
+          - v1.*                          
+      buildOnCommit: true              
+      buildOnPullRequest: true            
+      buildOnRelease: true               
+      buildOnTagPush: true                      
+        
