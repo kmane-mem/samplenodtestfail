@@ -1,7 +1,7 @@
 resources:
   - name: ar-image1
     type: image
-    integration: plv2-docker
+    integration: docker
     pointer:
       sourceName: "shippabledocker/pipelinev2"
     seed:
@@ -9,7 +9,7 @@ resources:
   
   - name: ar-image2invalidimg
     type: image
-    integration: plv2-docker
+    integration: docker
     pointer:
       sourceName: "shiphitchcock1/betaci"
     seed:
@@ -17,7 +17,7 @@ resources:
       
   - name: ar-image3invalidtag
     type: image
-    integration: plv2-docker
+    integration: docker
     pointer:
       sourceName: "shiphitchcock1/pipelinev2"
     seed:
@@ -25,7 +25,7 @@ resources:
       
   - name: ar-image4invalidformat
     type: image
-    integration: plv2-docker
+    integration: docker
     pointer:
       sourceName: "shiphitchcock1/pipelinev2"
     seed:
@@ -35,7 +35,7 @@ resources:
   
   - name: ar-ddccluster
     type: cluster
-    integration: ddc
+    integration: ship-ddc
     pointer:
       sourceName : "nothing" #we can anything because it is mandatory but ddc doesnot have clusters
       
@@ -56,7 +56,7 @@ resources:
       
   - name: ar-slack
     type: notification
-    integration: "slack"
+    integration: "notify-slack"
     pointer:
       recipients:
         - "#pipeline-pvt"
