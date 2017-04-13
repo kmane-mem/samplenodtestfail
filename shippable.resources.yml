@@ -127,7 +127,7 @@ resources:
     integration: "github"
     pointer:
       sourceName: "shiptest-rc-me/sample-script-3"
-      branch: master                        
+     # branch: master                        
       branches:
         except:
           - test                              
