@@ -79,9 +79,9 @@ jobs:
    - name: ar-inrunSh
      type: runSh
      steps:
-       - IN: ar-samplescript
+       - IN: ar-samplescript1
       # versionName: testsha
-       - IN: ar-image3invalidtag
+      # - IN: ar-image3invalidtag
       #- IN: test-time-1
        - TASK:
          - script: ls
