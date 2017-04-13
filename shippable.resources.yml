@@ -126,5 +126,5 @@ resources:
     type: gitRepo
     integration: "github"
     pointer:
-      sourceName: "shiphitchcock1/sample-script"
+      sourceName: "shiptest-rc-me/sample-script-3"
       branch: "master"
