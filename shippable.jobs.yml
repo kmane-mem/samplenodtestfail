@@ -79,13 +79,13 @@ jobs:
    - name: ar-inrunSh
      type: runSh
      steps:
-       - IN: ar-samplescript1
+       - IN: ar-samplescript2
       # versionName: testsha
       # - IN: ar-image3invalidtag
       #- IN: test-time-1
        - TASK:
          - script: ls
-         - script: ./IN/ar-samplescript/gitRepo/echo.sh
+         - script: ./IN/ar-samplescript2/gitRepo/echo.sh
      on_start:
        - NOTIFY: ar-slack
        - NOTIFY: ar-email
