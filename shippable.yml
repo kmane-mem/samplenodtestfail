@@ -16,4 +16,16 @@ build:
     #- grunt
     - ./node_modules/.bin/istanbul cover grunt -- -u tdd
     - ./node_modules/.bin/istanbul report cobertura --dir  shippable/codecoverage/
-    
+ 
+integrations:
+  notifications:
+    - integrationName: email
+      type: email
+      recipients: 
+        - varsha@shippable.com
+      sendConsoleLogs : true
+      sendCoverageReports : true
+      on_start: always  
+      on_success: always
+      on_failure: always
+      on_pull_request: always
