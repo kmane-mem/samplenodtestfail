@@ -39,7 +39,8 @@ build:
    # - sleep 8m
     #- pip install awsebcli
     #- cs ps
-
+  on_success:
+    - echo "on_success"
 #post_ci:
 
     #- docker push shippabledocker/sample_node:$BRANCH.$BUILD_NUMBER
@@ -47,6 +48,7 @@ build:
     #- docker push shippabledocker/cock1_nod_multipush56:multi123
   #  - docker build -t=shippabledocker/cock1_nod_multipush56push .    
    # - docker push shippabledocker/cock1_nod_multipush56push
+   
 
 integrations:
   hub:
