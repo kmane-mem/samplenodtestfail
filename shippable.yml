@@ -40,7 +40,7 @@ build:
     #- pip install awsebcli
     #- cs ps
   on_success:
-    - echo "on_success"
+    - echo "build on_success"
 #post_ci:
 
     #- docker push shippabledocker/sample_node:$BRANCH.$BUILD_NUMBER
