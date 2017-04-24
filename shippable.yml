@@ -24,8 +24,8 @@ node_js:
   #  - COMMITER=VARSHA
   
 build:
-  pre_ci:
-    - docker build -t=shippabledocker/sample_node .
+ # pre_ci:
+   # - docker build -t=shippabledocker/sample_node .
     
     
   #pre_ci_boot:
@@ -36,6 +36,8 @@ build:
 
   ci:
     - echo "hello world"
+    - echo JobTriggerByName="$JOB_TRIGGERED_BY_JOB"
+    - echo JobTriggerById="$JOB_TRIGGERED_BY_ID"
    # - sleep 8m
     #- pip install awsebcli
     #- cs ps
