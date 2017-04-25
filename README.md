@@ -1,4 +1,4 @@
-## sampleNod! Updating zep2(this) will create PR for zep branch
+## sampleNod!! Updating zep2(this) will create PR for zep branch
 Test sample for NodeJS with some basic commands to demonstrate the working of folder level caching of shippable.
 
 This repository has 3 files and the functions of each file are as follows.
@@ -21,4 +21,3 @@ Internal Implementation of cache.
 4. The reset of cache can be done using [reset_minion] or by manually going to ui and click on reset cache button in the project settings. The next build that gets triggered after the reset will not use any old cache.
 
 Please note that any errors during any of the caching steps are not treated as fatal errors.
-
