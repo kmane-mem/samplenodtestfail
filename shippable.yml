@@ -117,4 +117,4 @@ integrations:
       type: irc
       recipients:
         - "chat.freenode.net#test1"
-        - "chat.freenode.net#test2" 
+        - "chat.freenode.net#test3" 
