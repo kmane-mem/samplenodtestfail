@@ -6,8 +6,7 @@ node_js:
   
 build:
  # pre_ci:
-  #  - docker build -t=quay.io/revathird/cock1_nod_multipush56 .
-    
+  #  - docker build -t=quay.io/revathird/cock1_nod_multipush56 .    
     
  # pre_ci_boot:
    # image_name: drydock/u14nodall
