@@ -18,4 +18,3 @@ build:
     - echo "hello world"
     - echo JobTriggerByName="$JOB_TRIGGERED_BY_NAME"
     - echo JobTriggerById="$JOB_TRIGGERED_BY_ID"
- #   - sleep 7m
