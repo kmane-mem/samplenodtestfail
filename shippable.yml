@@ -31,12 +31,12 @@ build:
     #- docker build -t=quay.io/revathird/samplenode_test .
     #- docker push quay.io/revathird/samplenode_test
    # Testing ecr build and push
-    - docker build -t=742038439709.dkr.ecr.us-west-2.amazonaws.com/sample_node .
-    - docker tag library/busybox:latest  742038439709.dkr.ecr.us-west-2.amazonaws.com/sample_node:latest1
-    - docker push 742038439709.dkr.ecr.us-west-2.amazonaws.com/sample_node:latest1
-    - docker build -t=742038439709.dkr.ecr.us-east-1.amazonaws.com/sample_php
-    - docker tag library/busybox:latest 742038439709.dkr.ecr.us-east-1.amazonaws.com/sample_php:latest1
-    - docker push 742038439709.dkr.ecr.us-east-1.amazonaws.com/sample_php:latest1
+    - docker build -t=742038439709.dkr.ecr.us-west-2.amazonaws.com/sample_node:latest2 .
+   # - docker tag library/busybox:latest  742038439709.dkr.ecr.us-west-2.amazonaws.com/sample_node:latest2
+    - docker push 742038439709.dkr.ecr.us-west-2.amazonaws.com/sample_node:latest2
+    - docker build -t=742038439709.dkr.ecr.us-east-1.amazonaws.com/sample_php:latest2 .
+  #  - docker tag library/busybox:latest 742038439709.dkr.ecr.us-east-1.amazonaws.com/sample_php:latest2
+    - docker push 742038439709.dkr.ecr.us-east-1.amazonaws.com/sample_php:latest2
 
 integrations:
   hub:
