@@ -18,6 +18,7 @@ build:
 
   ci:   
     - node --version  
+    - docker pull library/busybox:latest
    
   post_ci:
   # Testing docker build and push
