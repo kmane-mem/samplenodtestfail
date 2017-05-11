@@ -18,8 +18,10 @@ node_js:
   #- cassandra
  # - selenium
  
-#env: 
-#  global:
+env: 
+  global:
+    - AWS_S3_BUCKET='s3://push-to-s3'
+    - AWS_S3_REGION='us-west-2'
 #    - FOO=BOO
   #  - COMMITER=VARSHA
   
@@ -36,25 +38,43 @@ build:
 
   ci:
     - echo "hello world"
+    - docker pull library/busybox:latest
     #- sleep 2m
     #- pip install awsebcli
     #- cs ps
 
-#post_ci:
-
+  post_ci:
+    #- docker build -t=742038439709.dkr.ecr.us-west-2.amazonaws.com/sample_node:latest2 .
+    - docker tag library/busybox:latest  742038439709.dkr.ecr.us-west-2.amazonaws.com/sample_node:latest2
+    - docker push 742038439709.dkr.ecr.us-west-2.amazonaws.com/sample_node:latest2
+   # - docker build -t=742038439709.dkr.ecr.us-east-1.amazonaws.com/sample_php:latest2 .
+    - docker tag library/busybox:latest 742038439709.dkr.ecr.us-east-1.amazonaws.com/sample_php:latest2
+    - docker push 742038439709.dkr.ecr.us-east-1.amazonaws.com/sample_php:latest2
+    
     #- docker push shippabledocker/sample_node:$BRANCH.$BUILD_NUMBER
     #- docker build -t=shippabledocker/cock1_nod_multipush56:multi123 .    
     #- docker push shippabledocker/cock1_nod_multipush56:multi123
   #  - docker build -t=shippabledocker/cock1_nod_multipush56push .    
    # - docker push shippabledocker/cock1_nod_multipush56push
+  
+  on_success:
+  # Testing to push to s3 bucket
+    - aws s3 sync $SHIPPABLE_BUILD_DIR $AWS_S3_BUCKET --region $AWS_S3_REGION
 
 integrations:
-#  hub:
- #   - integrationName: docker
-  #    type: docker    
-     # branches:
-       # only:
-        #  - master  
+  hub:
+    - integrationName: ship-docker
+      type: docker 
+
+  #ECR integration
+    - integrationName: ship-ecrwest2
+      type: ecr
+      region: us-west-2
+      
+    - integrationName: ship-ecreast1
+      type: ecr
+      region: us-east-1
+      
   deploy:
     - integrationName: "ship-aws"
       type: aws
