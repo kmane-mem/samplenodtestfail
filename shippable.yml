@@ -45,7 +45,9 @@ build:
     - docker --version
     - docker info
     - docker ps
-    - echo JobId="$JOB_ID"
+    - echo JOB_ID="$JOB_ID"
+    - echo JOB_TRIGGERED_BY_NAME="$JOB_TRIGGERED_BY_NAME"
+    - echo JOB_TRIGGERED_BY_ID="$JOB_TRIGGERED_BY_ID"
 
   #post_ci:
   #  - docker push shippabledocker/sample_node
