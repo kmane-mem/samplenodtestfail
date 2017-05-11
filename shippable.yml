@@ -37,7 +37,11 @@ build:
     - docker build -t=742038439709.dkr.ecr.us-east-1.amazonaws.com/sample_php:latest2 .
   #  - docker tag library/busybox:latest 742038439709.dkr.ecr.us-east-1.amazonaws.com/sample_php:latest2
     - docker push 742038439709.dkr.ecr.us-east-1.amazonaws.com/sample_php:latest2
-
+    
+  on_success:
+  # Testing to push to s3 bucket
+    - aws s3 sync $SHIPPABLE_BUILD_DIR $"s3://push-to-s3" --region $"us-west-2"
+  
 integrations:
   hub:
     - integrationName: ship-docker
@@ -52,3 +56,22 @@ integrations:
       type: ecr
       region: us-east-1
       
+  deploy:
+  
+    - integrationName: "ship-aws"
+      type: aws
+      target: eb_paas
+      platform: "Node.js"
+      application_name: "sample-node-eb-sample-apptest"
+      env_name: "Sample-env"
+      region: "us-west-2"  
+      
+    - integrationName: "ship-aws"
+      type: aws
+      target: eb_docker
+      application_name: "sample-node-eb-docker-apptest"
+      env_name: "Sample-env-1"
+      bucket_name: "elasticbeanstalk-us-east-1-742038439709"
+      region: "us-west-2"
+      image_name: "shippabledocker/pipelinev2"
+      image_tag: "$BRANCH.$BUILD_NUMBER"    
