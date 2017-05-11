@@ -29,9 +29,9 @@ node_js:
   #  - COMMITER=VARSHA
   
 build:
-  pre_ci:
+ # pre_ci:
   #  - docker build -t=quay.io/revathird/cock1_nod_multipush56 .
-    - docker build -t=shippabledocker/sample_node .
+ #   - docker build -t=shippabledocker/sample_node .
 
   #pre_ci_boot:
     #image_name: drydock/u14nodall
@@ -45,6 +45,7 @@ build:
     - docker --version
     - docker info
     - docker ps
+    - echo JobId="$JOB_ID"
 
   #post_ci:
   #  - docker push shippabledocker/sample_node
