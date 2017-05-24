@@ -18,10 +18,10 @@ node_js:
   #- cassandra
  # - selenium
  
-#env: 
-#  global:
-#    - FOO=BOO
-  #  - COMMITER=VARSHA
+env: 
+  global:
+    - FOO=BOO
+    - COMMITER=VARSHA
   
 build:
  # pre_ci:
@@ -39,7 +39,8 @@ build:
     - echo JobTriggerByName="$JOB_TRIGGERED_BY_NAME"
     - echo JobTriggerById="$JOB_TRIGGERED_BY_ID" 
     - echo "done"
-    - printenv
+    - echo $FOO
+    - echo $COMMITER
    # - sleep 8m
     #- pip install awsebcli
     #- cs ps
