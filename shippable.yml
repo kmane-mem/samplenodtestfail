@@ -20,8 +20,8 @@ node_js:
  
 env: 
   global:
-    - FOO=BOO
-    - COMMITER=VARSHA
+    - FOO: BOO
+    - COMMITER: VARSHA
   
 build:
  # pre_ci:
