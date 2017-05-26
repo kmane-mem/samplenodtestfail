@@ -97,7 +97,6 @@ integrations:
       recipients: 
         - shiphitchcock1@gmail.com
         - shiptest.rc.me@gmail.com
-
       
     - integrationName: notify-slack
       type: slack
@@ -122,5 +121,4 @@ integrations:
       #  - "webchat.irchighway.net/#test-rc1" 
       on_start: always
       on_success: always
-      on_failure: always
-  
+      on_failure: always  
