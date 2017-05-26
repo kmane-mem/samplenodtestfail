@@ -21,7 +21,7 @@ node_js:
 env: 
   global:
     - FOO: BOO
-    - COMMITER: VARSHA
+    - COMMITER: SHIPTESTRCME
   
 build:
  # pre_ci:
