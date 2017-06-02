@@ -24,15 +24,15 @@ env:
     - COMMITER: SHIPTESTRCME
   
 build:
- # pre_ci:
-   # - docker build -t=shippabledocker/sample_node .
-    
-    
-  #pre_ci_boot:
-  #  image_name: shippabledocker/cock1_nod_multipush56
-   # image_tag: multi123
-  #  pull: false
-   # options: '--privileged=false --net=bridge -e FOO=true -e BOO=false'
+ build:
+  pre_ci:
+    - docker build -t=shippabledocker/sample_node:jun217 .
+
+ # pre_ci_boot:
+  #  image_name: drydock/u16phpall
+  #  image_tag: master
+  #  pull: true
+   # options: '--privileged=true --net=bridge -e FOO=true -e BOO=false' 
 
   ci:
     - echo "hello world"
@@ -50,14 +50,16 @@ build:
     #- pip install awsebcli
     #- cs ps
 
-#post_ci:
-
+  post_ci:
+    - docker push shippabledocker/sample_node:jun217
     #- docker push shippabledocker/sample_node:$BRANCH.$BUILD_NUMBER
     #- docker build -t=shippabledocker/cock1_nod_multipush56:multi123 .    
     #- docker push shippabledocker/cock1_nod_multipush56:multi123
   #  - docker build -t=shippabledocker/cock1_nod_multipush56push .    
    # - docker push shippabledocker/cock1_nod_multipush56push
 
+  cache: true
+  
 integrations:
   hub:
     - integrationName: docker
