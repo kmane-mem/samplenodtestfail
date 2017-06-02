@@ -7,7 +7,7 @@ node_js:
   #- 0.11
   #- 0.10
   
-#services:
+services:
  # - mysql
  # - postgres
   #- redis
@@ -16,7 +16,7 @@ node_js:
   #- mongodb
  # - rabbitmq
   #- cassandra
- # - selenium
+  - selenium
  
 env: 
   global:
@@ -41,6 +41,7 @@ build:
     - echo "done"
     - echo $FOO
     - echo $COMMITER
+    - echo $selenium.__version__
    # - sleep 8m
     #- pip install awsebcli
     #- cs ps
