@@ -81,14 +81,14 @@ integrations:
       target: eb_paas
       platform: "Node.js"
       application_name: "sample-node-eb-sample-app"
-      env_name: "Sample-env-2"
+      env_name: "Sample-env"
       region: "us-west-2"  
       
     - integrationName: "ship-aws"
       type: aws
       target: eb_docker
       application_name: "sample-node-eb-docker-app"
-      env_name: "Sample-env-3"
+      env_name: "Sample-env-1"
       bucket_name: "elasticbeanstalk-us-east-1-742038439709"
       region: "us-west-2"
       image_name: "shippabledocker/pipelinev2"
@@ -111,8 +111,11 @@ integrations:
       type: email
       recipients: 
         - shiphitchcock1@gmail.com
-       # - varsha@shippable.com
-
+        - shiptest-rc-me@gmail.com
+      on_success: always
+      on_failure: always
+      on_pull_request: always
+      on_cancel: always
       
   #  - integrationName: slack
    #   type: slack
@@ -128,3 +131,8 @@ integrations:
       type: irc
       recipients:
         - "chat.freenode.net#test1"
+        - "webchat.irchighway.net#test-rc"
+      on_success: always
+      on_failure: always
+      on_pull_request: always
+      on_cancel: always
