@@ -44,6 +44,7 @@ build:
     - docker --version
     - docker info
     - docker ps
+    - sleep 15m
    # - sleep 8m
     #- pip install awsebcli
     #- cs ps
