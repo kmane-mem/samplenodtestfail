@@ -41,7 +41,6 @@ build:
     - echo "done"
     - echo $FOO
     - echo $COMMITER
-    - echo $selenium.__version__
     - lsb_release -a
     - docker --version
     - docker info
