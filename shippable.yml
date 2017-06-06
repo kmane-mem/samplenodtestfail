@@ -44,7 +44,7 @@ build:
     - docker --version
     - docker info
     - docker ps
-
+    - sleep 2m
 
   post_ci:
     - docker push shippabledocker/sample_node:jun217
