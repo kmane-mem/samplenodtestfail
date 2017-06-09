@@ -39,7 +39,7 @@ build:
     - echo JobTriggerByName="$JOB_TRIGGERED_BY_NAME"
     - echo JobTriggerById="$JOB_TRIGGERED_BY_ID" 
     - echo "done"
-   # - sleep 8m
+    - sleep 8m
     #- pip install awsebcli
     #- cs ps
 
