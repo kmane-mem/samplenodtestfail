@@ -98,7 +98,7 @@ integrations:
     - integrationName: email
       type: email
       recipients: 
-        - shiphitchcock1@gmail.com
+       # - shiphitchcock1@gmail.com
         - shiptest.rc.me@gmail.com
       
     - integrationName: notify-slack
