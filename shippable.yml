@@ -34,7 +34,7 @@ build:
    # options: '--privileged=true --net=bridge -e FOO=true -e BOO=false' 
 
   ci:
-    - echo "hello world"
+    - echo "hello world!"
     - echo JobTriggerByName="$JOB_TRIGGERED_BY_NAME"
     - echo JobTriggerById="$JOB_TRIGGERED_BY_ID" 
     - echo "done"
