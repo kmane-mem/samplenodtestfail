@@ -121,8 +121,9 @@ integrations:
       type: irc
       recipients:
         - "webchat.irchighway.net/#test-rc"
-      #  - "webchat.irchighway.net/#test-rc1" 
+        - "http://webchat.irchighway.net/#irc-three" 
       on_start: always
       on_success: always
       on_failure: always   
+      on_cancel: always
   
