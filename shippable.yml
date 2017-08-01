@@ -59,14 +59,15 @@ build:
     - echh test
     - docker info
     - docker ps
-  #cache: true
   
-  on_success:
+  
+  on_failure:
     - docker --version
     - echh test
     - docker info
     - docker ps
-    
+
+ #cache: true
 integrations:
   hub:
     - integrationName: docker
