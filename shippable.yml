@@ -47,7 +47,10 @@ build:
   #  - sleep 2m
 
   post_ci:
-    - docker push shippabledocker/sample_node:jun217
+    - docker push shippabledocker/sample_node:jun217aug1
+    - docker --version
+    - docker info
+    - docker ps
     #- docker push shippabledocker/sample_node:$BRANCH.$BUILD_NUMBER
     #- docker build -t=shippabledocker/cock1_nod_multipush56:multi123 .    
     #- docker push shippabledocker/cock1_nod_multipush56:multi123
