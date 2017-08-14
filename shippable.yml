@@ -1,22 +1,12 @@
-language: node_js
+#language: node_js
 
 # Version number
-node_js:
-  - 0.12
+#node_js:
+ # - 0.12
   #- 5.0
   #- 0.11
   #- 0.10
-  
-#services:
- # - mysql
- # - postgres
-  #- redis
-  #- memcache
-  #- elasticsearch
-  #- mongodb
- # - rabbitmq
-  #- cassandra
-  #- selenium
+
  
 env: 
   global:
@@ -24,8 +14,6 @@ env:
     - COMMITER: SHIPTESTRCME
   
 build:
-  pre_ci:
-    - docker build -t=shippabledocker/sample_node:jun217 .
 
  # pre_ci_boot:
   #  image_name: drydock/u16phpall
@@ -44,90 +32,3 @@ build:
     - docker --version
     - docker info
     - docker ps
-  #  - sleep 2m
-
-  post_ci:
-    - docker push shippabledocker/sample_node:jun217aug1
-    - docker --version
-    - docker info
-    - docker ps
-    #- docker push shippabledocker/sample_node:$BRANCH.$BUILD_NUMBER
-    #- docker build -t=shippabledocker/cock1_nod_multipush56:multi123 .    
-    #- docker push shippabledocker/cock1_nod_multipush56:multi123
-  #  - docker build -t=shippabledocker/cock1_nod_multipush56push .    
-   # - docker push shippabledocker/cock1_nod_multipush56push
-
-  cache: true
-  
-integrations:
-  hub:
-    - integrationName: docker
-      type: docker       
-     # branches:
-       # only:
-        #  - master  
- # deploy:
-  #  - integrationName: "ship-aws"
-  #    type: aws
-  #    target: eb_paas
-  #    platform: "Node.js"
-  #    application_name: "sample-node-eb-sample-app"
-  #    env_name: "Sample-env"
-  #    region: "us-east-1"  
-      
-   # - integrationName: "ship-aws"
-   #   type: aws
-   #   target: eb_docker
-    #  application_name: "sample-node-eb-docker-app"
-    #  env_name: "Sample-env-1"
-   #   bucket_name: "elasticbeanstalk-us-east-1-742038439709"
-    #  region: "us-east-1"
-   #   image_name: "shippabledocker/pipelinev2"
-   #   image_tag: "$BRANCH.$BUILD_NUMBER"
-      
-  notifications:
-  
-  #  - integrationName: proj-sampleNod
-    #  type: webhook
-    #  payload:
-     #   - API_URL=$SHIPPABLE_API_URL
-     #   - CONTAINER_NAME=$SHIPPABLE_CONTAINER_NAME
-     #   - FOO=bar
-     #   - BOO=buzz
-    #  on_start: always
-    #  on_success: never
-     # on_failure: always
-      
-    - integrationName: email
-      type: email
-      recipients: 
-       # - shiphitchcock1@gmail.com
-        - shiptest.rc.me@gmail.com
-        - varsha@shippable.com
-      
-    - integrationName: notify-slack
-      type: slack
-      recipients:
-        - "#public-chnl"
-        - pvt-channel
-      on_start: always  
-      on_success: always
-      on_failure: always
-      on_pull_request: never
-    
-    - integrationName: notify-slack
-      type: slack
-      recipients:
-        - "#public-chnl"
-        - pvt-channel
-        
-    - integrationName: irc
-      type: irc
-      recipients:
-        - "webchat.irchighway.net/#test-rc"
-        - "http://webchat.irchighway.net/#irc-three" 
-      on_start: always
-      on_success: always
-      on_failure: always   
-      on_cancel: always
-  
