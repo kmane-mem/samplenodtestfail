@@ -6,8 +6,8 @@ node_js:
 
 build:
   pre_ci:
-    - jfrog rt u testpreci.sh sample_app
-    #- jfrog rt dl test-repository-local/codeblocks.tar.xz
+    - jfrog rt u uploadpreci.sh sample_app
+    - jfrog rt dl sample_app/testpreci.sh
     
     
  # pre_ci_boot:
@@ -18,8 +18,8 @@ build:
 
   ci:
     - echo "hello world!!!"
-    - jfrog rt u testci.sh sample_app
-  #  - jfrog rt dl test-repository-local/codeblocks.tar.xz
+    - jfrog rt u uploadci.sh sample_app
+    - jfrog rt dl sample_app/testci.sh
 
 integrations:
   hub:
