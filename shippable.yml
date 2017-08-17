@@ -39,6 +39,7 @@ build:
   ci:
     - echo "hello world!!!"
     - docker pull library/busybox:latest
+    - echo "hello"
     #- sleep 2m
     #- pip install awsebcli
     #- cs ps
