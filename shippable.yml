@@ -2,7 +2,7 @@ language: node_js
 
 # Version number
 node_js:
-  - 0.12
+  - 8.2
   #- 5.0
   #- 0.11
   #- 0.10
@@ -81,14 +81,14 @@ integrations:
       target: eb_paas
       platform: "Node.js"
       application_name: "sample-node-eb-sample-app"
-      env_name: "Sample-env-1"
+      env_name: "Sample-env"
       region: "us-west-2"  
       
     - integrationName: "ship-aws"
       type: aws
       target: eb_docker
       application_name: "sample-node-eb-docker-app"
-      env_name: "Sample-env"
+      env_name: "Sample-env-1"
       bucket_name: "elasticbeanstalk-us-east-1-742038439709"
       region: "us-west-2"
       image_name: "shippabledocker/pipelinev2"
