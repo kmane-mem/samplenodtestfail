@@ -7,8 +7,7 @@ node_js:
 build:
   pre_ci:
     - jfrog rt u uploadpreci.sh sample_app
-    - jfrog rt dl sample_app/testpreci.sh
-    
+    - jfrog rt dl sample_app/testpreci.sh   
     
  # pre_ci_boot:
    # image_name: drydock/u14nodall
@@ -17,7 +16,7 @@ build:
   #  options: '--privileged=false --net=bridge -e FOO=true -e BOO=false'
 
   ci:
-    - echo "hello world!!!"
+    - echo "hello world!"
     - jfrog rt u uploadci.sh sample_app
     - jfrog rt dl sample_app/testci.sh
 
