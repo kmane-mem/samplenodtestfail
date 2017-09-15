@@ -12,12 +12,12 @@ env:
     
 build:
   pre_ci:
-    - docker build -t=quay.io/revathird/cock1_nod_multipush56 .
+    #- docker build -t=quay.io/revathird/cock1_nod_multipush56 .
     - echo "TEST1=$TEST1"
     
   pre_ci_boot:
-    image_name: drydock/u14nodall
-    image_tag: v5.3.1
+    image_name: drydock/u16nodall
+    image_tag: master
     pull: false
     options: '--privileged=false --net=bridge -e FOO=true -e BOO=false'
 
