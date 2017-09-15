@@ -2,11 +2,18 @@ language: node_js
 
 # Version number
 node_js:
-  - 0.12
-  
+  - 8.1
+  - 8.2
+
+env: 
+  global:
+    - TEST1=t1
+    - TEST2=t2
+    
 build:
- # pre_ci:
-  #  - docker build -t=quay.io/revathird/cock1_nod_multipush56 .
+  pre_ci:
+    - docker build -t=quay.io/revathird/cock1_nod_multipush56 .
+    - echo "TEST1=$TEST1"
     
   pre_ci_boot:
     image_name: drydock/u14nodall
@@ -16,4 +23,5 @@ build:
 
   ci:
     - echo "hello world"
-    #- sleep 5m
+    - echo "TEST1=$TEST1"
+    - echo "TEST2=$TEST2"
