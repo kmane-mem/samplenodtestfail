@@ -6,7 +6,7 @@ node_js:
 
 env: 
     - TEST="echo hello"
-    - secure: dsifdowehowrwrwrhwo92e2o32eohdiw8rddlwnfkwnfiwfksncksc
+    - secure:yrrdsifdowehowrwrwrhwo92e2o32eohdiw8rddlwnfkwnfiwfksncksc
     
 build:
 
