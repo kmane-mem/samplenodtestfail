@@ -70,7 +70,7 @@ build:
  #cache: true
 integrations:
   hub:
-    - integrationName: docker
+    - integrationName: ship-docker
       type: docker       
      # branches:
        # only:
@@ -113,30 +113,4 @@ integrations:
        # - shiphitchcock1@gmail.com
         - shiptest.rc.me@gmail.com
         - varsha@shippable.com
-      
-    - integrationName: notify-slack
-      type: slack
-      recipients:
-        - "#public-chnl"
-        - pvt-channel
-      on_start: always  
-      on_success: always
-      on_failure: always
-      on_pull_request: never
-    
-    - integrationName: notify-slack
-      type: slack
-      recipients:
-        - "#public-chnl"
-        - pvt-channel
-        
-    - integrationName: irc
-      type: irc
-      recipients:
-        - "webchat.irchighway.net/#test-rc"
-        - "http://webchat.irchighway.net/#irc-three" 
-      on_start: always
-      on_success: always
-      on_failure: always   
-      on_cancel: always
   
