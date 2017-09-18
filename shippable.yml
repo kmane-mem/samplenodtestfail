@@ -11,7 +11,7 @@ env:
 matrix:
   include:
     - node_js: 6.11
-      env: test===yrrdsifdowehowrwrwrhwo92e2o32eohdiw8rddlwnfkwnfiwfksncksc
+      env: ----test===yrrdsifdowehowrwrwrhwo92e2o32eohdiw8rddlwnfkwnfiwfksncksc
     
 build:
 
