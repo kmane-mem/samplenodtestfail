@@ -5,8 +5,13 @@ node_js:
   - 8.1
 
 env: 
-    - TEST="echo hello"
-    -test===yrrdsifdowehowrwrwrhwo92e2o32eohdiw8rddlwnfkwnfiwfksncksc
+  - TOO=FUTU
+  
+    
+matrix:
+  include:
+    - node_js: 6.11
+      env: test===yrrdsifdowehowrwrwrhwo92e2o32eohdiw8rddlwnfkwnfiwfksncksc
     
 build:
 
