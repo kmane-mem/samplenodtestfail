@@ -9,9 +9,9 @@ env:
     - TEST="abc"
     
 build:
-  pre_ci:
+ # pre_ci:
     #- docker build -t=quay.io/revathird/cock1_nod_multipush56 .
-    - eval $TEST
+    
     
   pre_ci_boot:
     image_name: drydock/u16nodall
@@ -22,4 +22,4 @@ build:
   ci:
     - echo "hello world"
     - echo "TEST=$TEST"
-
+    - eval $TEST
