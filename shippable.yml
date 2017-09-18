@@ -6,13 +6,10 @@ node_js:
 
 env: 
     - TEST="echo hello"
-    - TEST="abc"
+    - secure: dsifdowehowrwrwrhwo92e2o32eohdiw8rddlwnfkwnfiwfksncksc
     
 build:
- # pre_ci:
-    #- docker build -t=quay.io/revathird/cock1_nod_multipush56 .
-    
-    
+
   pre_ci_boot:
     image_name: drydock/u16nodall
     image_tag: master
