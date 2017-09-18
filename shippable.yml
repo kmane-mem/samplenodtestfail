@@ -3,19 +3,16 @@ language: node_js
 
 # Version number
 node_js:
-  - 0.12
+  - "67"
 
 env:
  - test="latest"
- - test="masterryt"
 
 git:
    submodules: false
    
 build:
-  pre_ci:
-    - docker build -t=shippabledocker/hitchcock3_sample_nodetest .
-   
+  
   pre_ci_boot:
     image_name: drydock/u14nodall
     image_tag: $test
@@ -25,9 +22,6 @@ build:
   ci:
     - ps -eax
     - ls -al
-
-  post_ci:     
-    - docker push shippabledocker/hitchcock3_sample_nodetest
     
 integrations:
   hub:
