@@ -3,14 +3,18 @@ language: node_js
 # Version number
 node_js:
   - 0.12
-  
+
+env: 
+    - pull_image_tag="v5.3.1"
+    - pull_image_tag="master"
+    
 build:
  # pre_ci:
   #  - docker build -t=quay.io/revathird/cock1_nod_multipush56 .
     
   pre_ci_boot:
     image_name: drydock/u14nodall
-    image_tag: v5.3.1
+    image_tag: $pull_image_tag
     pull: false
     options: '--privileged=false --net=bridge -e FOO=true -e BOO=false'
 
