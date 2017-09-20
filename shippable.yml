@@ -3,31 +3,31 @@ language: node_js
 
 # Version number
 node_js:
-  - 0.12
+  - 8.1
 
-env:
- - test="latest"
- - test="masterryt"
+#env:
+# - test="latest"
+# - test="masterryt"
 
 git:
    submodules: false
    
 build:
-  pre_ci:
-    - docker build -t=shippabledocker/hitchcock3_sample_nodetest .
+  #pre_ci:
+    #- docker build -t=shippabledocker/hitchcock3_sample_nodetest .
    
-  pre_ci_boot:
-    image_name: drydock/u14nodall
-    image_tag: $test
-    pull: true
-    options: '--privileged=true --net=bridge -e FOO=true -e BOO=false'
-    
-  ci:
-    - ps -eax
-    - ls -al
 
-  post_ci:     
-    - docker push shippabledocker/hitchcock3_sample_nodetest
+  pre_ci_boot:
+    image_name: drydock/u14pytall
+    image_tag: v5.8.2
+    pull: true
+    options: "-m=8m"
+
+  ci:
+    - service --status-all
+
+  #post_ci:     
+    #- docker push shippabledocker/hitchcock3_sample_nodetest
     
 integrations:
   hub:
