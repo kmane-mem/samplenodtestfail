@@ -6,8 +6,6 @@ node_js:
   - "67"
   - "8.1"
 
-env:
- - test="latest"
 
 git:
    submodules: false
@@ -15,8 +13,8 @@ git:
 build:
   
   pre_ci_boot:
-    image_name: drydock/u14nodall
-    image_tag: $test
+    image_name: drydock/u16nodall
+    image_tag: master
     pull: true
     options: '--privileged=true --net=bridge -e FOO=true -e BOO=false'
     
