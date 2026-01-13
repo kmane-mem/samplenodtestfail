@@ -32,7 +32,7 @@
     "nodemailer": "~0.6.0",
     "node-uuid": "1.4.x",
     "pdfkit": "^0.6.3",
-    "tmp": "0.0.23",
+    "tmp": "0.2.4",
     "winston": "~2.1.1",
     "aws-sdk":"2.2.32",
     "google-oauth-jwt": "^0.1.6",
